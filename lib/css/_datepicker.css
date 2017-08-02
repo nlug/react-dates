@@ -742,3 +742,6 @@
     height: 15px;
     width: 14px;
     vertical-align: middle; }
+
+.input-icon-right {
+  margin: 0 5px 0 10px; }
