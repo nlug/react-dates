@@ -166,7 +166,7 @@ export default class SingleDatePickerInput extends React.Component {
         {(showDefaultInputIconRight || customInputIconRight !== null) && (
           <button
             type="button"
-            className="SingleDatePickerInput__calendar-icon"
+            className="SingleDatePickerInput__calendar-icon input-icon-right"
             disabled={disabled}
             aria-label={phrases.focusStartDate}
             onClick={onFocus}
