@@ -28,6 +28,8 @@ export default {
   customCloseIcon: PropTypes.node,
   showDefaultInputIcon: PropTypes.bool,
   customInputIcon: PropTypes.node,
+  showDefaultInputIconRight: PropTypes.bool,
+  customInputIconRight: PropTypes.node,
 
   // calendar presentation and interaction related props
   renderMonth: PropTypes.func,

@@ -26,6 +26,8 @@ const propTypes = forbidExtraProps({
   customCloseIcon: PropTypes.node,
   showDefaultInputIcon: PropTypes.bool,
   customInputIcon: PropTypes.node,
+  showDefaultInputIconRight: PropTypes.bool,
+  customInputIconRight: PropTypes.node,
   isRTL: PropTypes.bool,
   onChange: PropTypes.func,
   onClearDate: PropTypes.func,
@@ -53,6 +55,8 @@ const defaultProps = {
   showDefaultInputIcon: false,
   customCloseIcon: null,
   customInputIcon: null,
+  showDefaultInputIconRight: false,
+  customInputIconRight: null,
   isRTL: false,
 
   onChange() {},
@@ -104,6 +108,7 @@ export default class SingleDatePickerInput extends React.Component {
       showCaret,
       showClearDate,
       showDefaultInputIcon,
+      showDefaultInputIconRight,
       phrases,
       onClearDate,
       onChange,
@@ -114,10 +119,12 @@ export default class SingleDatePickerInput extends React.Component {
       screenReaderMessage,
       customCloseIcon,
       customInputIcon,
+      customInputIconRight,
       isRTL,
     } = this.props;
 
     const inputIcon = customInputIcon || (<CalendarIcon />);
+    const inputIconRight = customInputIconRight || (<CalendarIcon />);
     const closeIcon = customCloseIcon || (<CloseButton />);
     const screenReaderText = screenReaderMessage || phrases.keyboardNavigationInstructions;
 
@@ -156,7 +163,17 @@ export default class SingleDatePickerInput extends React.Component {
           onKeyDownTab={onKeyDownTab}
           onKeyDownArrowDown={onKeyDownArrowDown}
         />
-
+        {(showDefaultInputIconRight || customInputIconRight !== null) && (
+          <button
+            type="button"
+            className="SingleDatePickerInput__calendar-icon"
+            disabled={disabled}
+            aria-label={phrases.focusStartDate}
+            onClick={onFocus}
+          >
+            {inputIconRight}
+          </button>
+        )}
         {showClearDate && (
           <button
             type="button"

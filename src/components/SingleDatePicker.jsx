@@ -49,6 +49,8 @@ const defaultProps = {
   showDefaultInputIcon: false,
   customInputIcon: null,
   customCloseIcon: null,
+  showDefaultInputIconRight: false,
+  customInputIconRight: null,
 
   // calendar presentation and interaction related props
   orientation: HORIZONTAL_ORIENTATION,
@@ -392,6 +394,8 @@ export default class SingleDatePicker extends React.Component {
       showClearDate,
       showDefaultInputIcon,
       customInputIcon,
+      showDefaultInputIconRight,
+      customInputIconRight,
       date,
       phrases,
       withPortal,
@@ -423,6 +427,8 @@ export default class SingleDatePicker extends React.Component {
             showClearDate={showClearDate}
             showDefaultInputIcon={showDefaultInputIcon}
             customInputIcon={customInputIcon}
+            showDefaultInputIconRight={showDefaultInputIconRight}
+            customInputIconRight={customInputIconRight}
             displayValue={displayValue}
             inputValue={inputValue}
             onChange={this.onChange}

@@ -66,6 +66,19 @@ storiesOf('SDP - Input Props', module)
       customInputIcon={<TestCustomInputIcon />}
     />
   ))
+  .addWithInfo('with show calendar icon right', () => (
+    <SingleDatePickerWrapper
+      initialDate={moment().add(3, 'days')}
+      showDefaultInputIconRight
+    />
+  ))
+  .addWithInfo('with show calendar icon both', () => (
+    <SingleDatePickerWrapper
+      initialDate={moment().add(3, 'days')}
+      showDefaultInputIcon
+      showDefaultInputIconRight
+    />
+  ))
   .addWithInfo('with screen reader message', () => (
     <SingleDatePickerWrapper
       initialDate={moment().add(3, 'days')}
